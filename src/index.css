@@ -3,20 +3,6 @@
 @tailwind utilities;
 
 
-:root {
-  /* Light theme variables */
-  --color-bg: #ffffff;
-  --color-text: #000000;
-  --color-primary: #1a73e8;
-}
-
-.dark {
-  /* Dark theme variables */
-  --color-bg: #121212;
-  --color-text: #e0e0e0;
-  --color-primary: #bb86fc;
-}
-
 :root, .dark {
   transition: background-color 0.3s, color 0.3s;
 }

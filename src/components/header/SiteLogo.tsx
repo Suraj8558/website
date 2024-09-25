@@ -3,8 +3,8 @@ import * as React from "react";
 const SiteLogo = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={150}
-    height={150}
+    width={40}
+    height={40}
     viewBox="0 0 124 124"
     fill="none"
     {...props} // Spread props to allow for customization of the SVG element
