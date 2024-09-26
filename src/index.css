@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 
-:root, .dark {
+:root,
+.dark {
   transition: background-color 0.3s, color 0.3s;
+}
+
+@layer components {
+  .link,
+  .link.active {
+    @apply inline-block text-black dark:text-white relative
+  }
+
+  .link:after, .link.active:after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-[2px] w-0 bg-red-500 transition-all duration-300 ease-in-out
+  }
+
+  .link:hover:after {
+    @apply w-full
+  }
+
+  .link.active:after {
+    content: '';
+    @apply w-full
+  }
 }

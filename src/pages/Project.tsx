@@ -1,9 +1,6 @@
-import Layout from "../components/layout/Layout"
 const Project = () => {
   return (
-    <Layout> 
-      <div>Project page</div>
-    </Layout>
+    <div className="container">Project page</div>
   )
 }
 

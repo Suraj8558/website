@@ -16,16 +16,16 @@ export default {
       'sm': '576px',
       'md': '960px',
       'lg': '1140px',
-      "xl": '1280px',
     },
 
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
+      height: {
+        'custom': 'calc(100vh - 64px)',
+      },
     },
-    colors: {
-    }
   },
   plugins: [require('@tailwindcss/typography'),],
 }

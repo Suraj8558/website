@@ -1,5 +1,5 @@
 import { MenuItem } from "../../types";
-import { Link } from "react-router-dom";
+import { NavLink  } from "react-router-dom";
 interface props {
   menus: MenuItem[];
 }
@@ -9,9 +9,9 @@ const Navigation = ({ menus }: props) => {
     <ul className="menu">
       {menus?.map((menu, index) => (
         <li key={`menu-${index}`} className="inline-block">
-          <Link to={menu?.url} className="p-3">
+          <NavLink  to={menu?.url} className="link p-4 ">
             {menu?.title}{" "}
-          </Link>
+          </NavLink >
         </li>
       ))}
     </ul>

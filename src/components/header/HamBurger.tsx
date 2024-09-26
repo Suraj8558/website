@@ -1,6 +1,16 @@
+import {useState,} from 'react';
+import { Menu , X } from 'lucide-react';
+
 const HamBurger = () => {
+  const [isOpen, SetIsOpen] =  useState(false)
+  const handleChange = () => {
+    SetIsOpen(!isOpen)
+  }
+
   return (
-    <div>HamBurger</div>
+    <button onClick={handleChange}>
+        {isOpen ?  <X /> : <Menu />  }
+    </button>
   )
 }
 

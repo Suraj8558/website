@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../theme/ThemeContext';
+import { Sun , MoonStar } from 'lucide-react';
 
 const ThemeSwitcher: React.FC = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
@@ -7,9 +8,8 @@ const ThemeSwitcher: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 bg-gray-200 dark:bg-gray-700 rounded"
     >
-      Switch to {isDarkMode ? 'light' : 'dark'} mode
+      {isDarkMode ? <Sun /> : <MoonStar />} 
     </button>
   );
 };

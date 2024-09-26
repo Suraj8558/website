@@ -1,9 +1,6 @@
-import Layout from "../components/layout/Layout";
 const About = () => {
   return (
-    <Layout>
-      <div>About page </div>
-    </Layout>
+    <div className="container">About page </div>
   );
 };
 

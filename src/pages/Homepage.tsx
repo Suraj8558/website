@@ -1,16 +1,38 @@
+import React, { useState, useEffect } from "react";
+import ShimmerCardList from "../components/shimar/ShimmerCardList";
+const Homepage: React.FC = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-const Homepage = () => {
+  useEffect(() => {
+    // Simulate a data fetch
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("Error fetching dashboard data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <ShimmerCardList />;
+  }
+
   return (
-    <div className="min-h-screen bg-light-background dark:bg-dark-background text-black dark:text-white transition-colors duration-300">
-        <div className="container mx-auto p-4">
-          <h1 className="text-3xl font-bold text-blue-600 dark:text-primary">
-            Tailwind CSS Dark Mode with Context API
-          </h1>
-          <p className="mt-4">Current theme:</p>
-          
-        </div>
-      </div>
-  )
-}
+    <div className="p-4 container">
+      <h1 className="text-2xl font-bold">Dashboard</h1>
+      {/* Render your data here */}
+      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+    </div>
+  );
+};
 
-export default Homepage
+export default Homepage;
